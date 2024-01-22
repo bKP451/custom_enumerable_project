@@ -1,4 +1,19 @@
 module Enumerable
+  def my_each
+    new_array = []
+    for individual_element in self
+      new_array << yield(individual_element)
+    end
+  end
+
+  def my_each_with_index
+    new_array = []
+    i = 0
+    for individual_element in self
+      new_array << yield(individual_element, i)
+      i += 1
+    end
+  end
   # Your code goes here
 end
 
@@ -7,25 +22,8 @@ end
 # your enumerable module will have access
 # to this method
 class Array
-  # Define my_each here
-  def my_each
-    i = 0
-    new_array = []
-    while i < self.length
-      new_array << yield(self[i])
-      i += 1
-    end
-    new_array
-  end
-
-  def my_each
-    new_array = []
-    for individual_element in self
-      new_array << yield(individual_element)
-    end
-  end
 end
 
 
-# a = [1, 2, 3]
-# p a.my_each { |n| n }
+# I do not know how it is being passed in rspec
+p h.my_each_with_index { |element, index| [element *2, index * 2]}
