@@ -61,4 +61,11 @@ module Enumerable
 end
 
 class Array
+  def my_map
+    new_array = []
+    self.my_each do |individual_element|
+      new_array << yield(individual_element)
+    end
+    new_array
+  end
 end
