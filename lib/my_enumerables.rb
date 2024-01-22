@@ -30,6 +30,14 @@ module Enumerable
     end
     valid
   end
+
+  def my_any?
+    valid = false
+    for individual_element in self
+      return true if yield(individual_element)
+    end
+    valid
+  end
 end
 
 class Array
