@@ -68,4 +68,24 @@ class Array
     end
     new_array
   end
+
+  # def my_inject(initial_value)
+  #   result = initial_value
+  #   self.my_each do |individual_element|
+  #     if initial_value == 1
+  #       result = yield(result, individual_element)
+  #     else
+  #       result = yield(result, individual_element)
+  #     end
+  #   end
+  #   result
+  # end
+  #
+  def my_inject(default_argument)
+    result = default_argument
+    self.each do |elem|
+      result = yield(result, elem)
+    end
+    result
+  end
 end
