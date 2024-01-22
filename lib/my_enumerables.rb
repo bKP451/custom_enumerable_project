@@ -46,6 +46,18 @@ module Enumerable
     end
     valid
   end
+
+  def my_count
+    count = 0
+    self.my_each do |individual_element|
+      if block_given?
+        count += 1 if yield(individual_element)
+      else
+        count += 1
+      end
+    end
+    count
+  end
 end
 
 class Array
