@@ -22,6 +22,14 @@ module Enumerable
     end
     new_array
   end
+
+  def my_all?
+    valid = true
+    for individual_element in self
+      return false if !(yield(individual_element))
+    end
+    valid
+  end
 end
 
 class Array

@@ -3,7 +3,7 @@
 require_relative '../lib/my_enumerables'
 
 RSpec.describe Enumerable do
-  subject(:enumerable) { [1, 1, 2, 3, 5, 8, 13, 21, 34] }
+  subject(:enumerable) { [1, 1, 2, 3, 5, 8, 13, 21, 34, 1] }
 
   describe '#my_all?' do
     context 'when all elements match the condition' do

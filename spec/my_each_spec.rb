@@ -7,7 +7,7 @@ RSpec.describe Array do
 
   describe '#my_each' do
     context 'when given a block' do
-      it 'returns the original array' do
+      it 'returns the\ original array' do
         my_each_results = array.my_each do |_element|
           # This should return the original array
           # no matter the contents of the block
