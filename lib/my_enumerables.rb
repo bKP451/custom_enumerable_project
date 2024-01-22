@@ -14,16 +14,15 @@ module Enumerable
       i += 1
     end
   end
-  # Your code goes here
+
+  def my_select
+    new_array = []
+    for individual_element in self
+      new_array << individual_element if yield(individual_element)
+    end
+    new_array
+  end
 end
 
-# You will first have to define my_each
-# on the Array class. Methods defined in
-# your enumerable module will have access
-# to this method
 class Array
 end
-
-
-# I do not know how it is being passed in rspec
-p h.my_each_with_index { |element, index| [element *2, index * 2]}
