@@ -38,6 +38,14 @@ module Enumerable
     end
     valid
   end
+
+  def my_none?
+    valid = true
+    self.my_each do |individual_element|
+      return false if yield(individual_element)
+    end
+    valid
+  end
 end
 
 class Array
